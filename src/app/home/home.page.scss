@@ -1,4 +1,52 @@
 .welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+    max-height: 35vh;
+    overflow: hidden;
+}
+
+ion-button {
+    font-size: 25px;
+    height: 80px;
+}
+
+.grid-col-gap {
+    padding: 0;
+    margin: 0;
+}
+
+.btns-row {
+    margin-left: 5px;
+}
+
+.list-display {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+
+
+.row-display {
+    margin: 10px 0 10px 0;
+    font-size: 20px;
+    text-align: end;
+    color: gray;
+    font-weight: lighter;
+}
+#container-input {
+  font-size: 60px;
+  color: black;
+  text-align: end;
+  font-weight: normal;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin-right: 20px;
+}
+
+
+.container-btns {
+  bottom: 0;
+}
+
+.btn-fn {
+    font-size: 30px;
 }
