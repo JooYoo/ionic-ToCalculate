@@ -26,8 +26,8 @@
   </ion-list>
 
   <div>
-    <div id="container-input">
-      0
+    <div id="container-input" >
+        {{displayInput}}
     </div>
   </div>
 
@@ -85,7 +85,7 @@
 
         <ion-row class="btns-row">
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">1</ion-button>
+            <ion-button (click)="currentInput = '1'" (click)="addDisplayInput()" Color="dark" expand="full">1</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
             <ion-button Color="dark" expand="full">2</ion-button>
