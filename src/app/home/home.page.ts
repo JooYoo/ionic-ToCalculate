@@ -6,19 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  displayInput: string
-  currentInput: string
+  inputs: string
+  input: string
 
   constructor() { }
 
   ngOnInit() {
-    this.displayInput = '0'
-    this.currentInput = ''
+    this.inputs = '0'
+    this.input = ''
   }
 
-  addDisplayInput(): void {
-    this.displayInput += this.currentInput
-    this.currentInput = ''
+  addInputs(): void {
+    if (this.inputs === '0') {
+      this.inputs =''
+    }
+    if (this.inputs.length < 11) {
+      this.inputs += this.input
+    }
+    this.input = ''
+  }
+
+  clearInputs():void{
+    this.inputs = '0'
   }
 
 

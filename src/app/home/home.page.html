@@ -26,8 +26,8 @@
   </ion-list>
 
   <div>
-    <div id="container-input" >
-        {{displayInput}}
+    <div id="container-input">
+      {{inputs}}
     </div>
   </div>
 
@@ -40,73 +40,73 @@
 
         <ion-row class="btns-row">
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">AC</ion-button>
+            <ion-button (click)="clearInputs()" Color="dark" expand="full">AC</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
             <ion-button Color="dark" expand="full">+/-</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">%</ion-button>
+            <ion-button (click)="input = '%'" (click)="addInputs()" Color="dark" expand="full">%</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button class="btn-fn" Color="gold" expand="full">&#247;</ion-button>
-          </ion-col>
-        </ion-row>
-
-        <ion-row class="btns-row">
-          <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">7</ion-button>
-          </ion-col>
-          <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">8</ion-button>
-          </ion-col>
-          <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">9</ion-button>
-          </ion-col>
-          <ion-col class="grid-col-gap" size="3">
-            <ion-button class="btn-fn" Color="gold" expand="full">&#xd7;</ion-button>
+            <ion-button (click)="input = '&#247;'" (click)="addInputs()" class="btn-fn" Color="gold" expand="full">&#247;</ion-button>
           </ion-col>
         </ion-row>
 
         <ion-row class="btns-row">
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">4</ion-button>
+            <ion-button (click)="input = '7'" (click)="addInputs()" Color="dark" expand="full">7</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">5</ion-button>
+            <ion-button (click)="input = '8'" (click)="addInputs()" Color="dark" expand="full">8</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">6</ion-button>
+            <ion-button (click)="input = '9'" (click)="addInputs()" Color="dark" expand="full">9</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button class="btn-fn" Color="gold" expand="full">&#x2212;</ion-button>
+            <ion-button (click)="input = '&#xd7;'" (click)="addInputs()" class="btn-fn" Color="gold" expand="full">&#xd7;</ion-button>
           </ion-col>
         </ion-row>
 
         <ion-row class="btns-row">
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="currentInput = '1'" (click)="addDisplayInput()" Color="dark" expand="full">1</ion-button>
+            <ion-button (click)="input = '4'" (click)="addInputs()" Color="dark" expand="full">4</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">2</ion-button>
+            <ion-button (click)="input = '5'" (click)="addInputs()" Color="dark" expand="full">5</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">3</ion-button>
+            <ion-button (click)="input = '6'" (click)="addInputs()" Color="dark" expand="full">6</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button class="btn-fn" Color="gold" expand="full">&#x2b;</ion-button>
+            <ion-button (click)="input = '&#x2212;'" (click)="addInputs()"class="btn-fn" Color="gold" expand="full">&#x2212;</ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="btns-row">
+          <ion-col class="grid-col-gap" size="3">
+            <ion-button (click)="input = '1'" (click)="addInputs()" Color="dark" expand="full">1</ion-button>
+          </ion-col>
+          <ion-col class="grid-col-gap" size="3">
+            <ion-button (click)="input = '2'" (click)="addInputs()" Color="dark" expand="full">2</ion-button>
+          </ion-col>
+          <ion-col class="grid-col-gap" size="3">
+            <ion-button (click)="input = '3'" (click)="addInputs()" Color="dark" expand="full">3</ion-button>
+          </ion-col>
+          <ion-col class="grid-col-gap" size="3">
+            <ion-button (click)="input = '&#x2b;'" (click)="addInputs()" class="btn-fn" expand="full" Color="gold">&#x2b;</ion-button>
           </ion-col>
         </ion-row>
 
         <ion-row class="btns-row">
           <ion-col class="grid-col-gap" size="6">
-            <ion-button Color="dark" expand="full">0</ion-button>
+            <ion-button (click)="input = '0'" (click)="addInputs()" Color="dark" expand="full">0</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">&#8226;</ion-button>
+            <ion-button (click)="input = '.'" (click)="addInputs()" Color="dark" expand="full">&#8226;</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button class="btn-fn" Color="gold" expand="full">&#x3d;</ion-button>
+            <ion-button (click)="input = '='" (click)="addInputs()" class="btn-fn" Color="gold" expand="full">&#x3d;</ion-button>
           </ion-col>
         </ion-row>
 
