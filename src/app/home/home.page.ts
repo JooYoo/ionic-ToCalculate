@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Equation } from '../interfaces/equation';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  equations: Equation[]
   inputs: string
   input: string
 
   constructor() { }
 
   ngOnInit() {
+    this.equations = []
     this.inputs = '0'
     this.input = ''
   }
