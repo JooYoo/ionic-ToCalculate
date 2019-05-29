@@ -6,6 +6,8 @@
 ion-button {
     font-size: 25px;
     height: 80px;
+    margin-left: 5px;
+    border-radius: 25px !important;
 }
 
 .grid-col-gap {
@@ -14,7 +16,7 @@ ion-button {
 }
 
 .btns-row {
-    margin-left: 5px;
+    margin-left: 0px;
 }
 
 .list-display {
