@@ -1,5 +1,5 @@
 export interface Equation {
-    id:number,
-    expression:string
+    id: number,
+    expression: string
 }
 

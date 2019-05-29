@@ -8,29 +8,39 @@ import { Equation } from '../interfaces/equation';
 })
 export class HomePage {
   equations: Equation[]
-  inputs: string
-  input: string
+  inputDisplay: string
+  input: number
+  operator: string
+  result: number
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
     this.equations = []
-    this.inputs = '0'
-    this.input = ''
+    this.inputDisplay = '0'
+    this.input = 0
   }
 
   addInputs(): void {
-    if (this.inputs === '0') {
-      this.inputs =''
+    if (this.inputDisplay === '0') {
+      this.inputDisplay = ''
     }
-    if (this.inputs.length < 11) {
-      this.inputs += this.input
+    if (this.inputDisplay.length < 11) {
+      this.inputDisplay += this.input
     }
-    this.input = ''
+    this.input = 0
   }
 
-  clearInputs():void{
-    this.inputs = '0'
+  getResult(): void {
+    this.result = eval(this.inputDisplay)
+    console.log(this.result)
+    this.inputDisplay = String(this.result)
+  }
+
+  clearInputs(): void {
+    this.inputDisplay = '0'
   }
 
 

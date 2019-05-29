@@ -27,7 +27,7 @@
 
   <div>
     <div id="container-input">
-      {{inputs}}
+      {{inputDisplay}}
     </div>
   </div>
 
@@ -49,7 +49,7 @@
             <ion-button (click)="input = '%'" (click)="addInputs()" Color="dark" expand="full">%</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="input = '&#247;'" (click)="addInputs()" class="btn-fn" Color="gold" expand="full">&#247;</ion-button>
+            <ion-button (click)="input = '/'" (click)="addInputs()" class="btn-fn" Color="gold" expand="full">&#247;</ion-button>
           </ion-col>
         </ion-row>
 
@@ -64,7 +64,7 @@
             <ion-button (click)="input = '9'" (click)="addInputs()" Color="dark" expand="full">9</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="input = '&#xd7;'" (click)="addInputs()" class="btn-fn" Color="gold" expand="full">&#xd7;</ion-button>
+            <ion-button (click)="input = '*'" (click)="addInputs()" class="btn-fn" Color="gold" expand="full">&#xd7;</ion-button>
           </ion-col>
         </ion-row>
 
@@ -79,7 +79,7 @@
             <ion-button (click)="input = '6'" (click)="addInputs()" Color="dark" expand="full">6</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="input = '&#x2212;'" (click)="addInputs()"class="btn-fn" Color="gold" expand="full">&#x2212;</ion-button>
+            <ion-button (click)="input = '-'" (click)="addInputs()"class="btn-fn" Color="gold" expand="full">&#x2212;</ion-button>
           </ion-col>
         </ion-row>
 
@@ -106,7 +106,7 @@
             <ion-button (click)="input = '.'" (click)="addInputs()" Color="dark" expand="full">&#8226;</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="input = '='" (click)="addInputs()" class="btn-fn" Color="gold" expand="full">&#x3d;</ion-button>
+            <ion-button (click)="input = '='" (click)="getResult()" class="btn-fn" Color="gold" expand="full">&#x3d;</ion-button>
           </ion-col>
         </ion-row>
 
