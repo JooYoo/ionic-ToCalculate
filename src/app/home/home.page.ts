@@ -8,39 +8,65 @@ import { Equation } from '../interfaces/equation';
 })
 export class HomePage {
   equations: Equation[]
-  inputDisplay: string
-  input: number
+  inputNum: string
+  input: string
   operator: string
+  prepareCal: string
   result: number
 
-  constructor() {
 
-  }
+  constructor() { }
 
   ngOnInit() {
     this.equations = []
-    this.inputDisplay = '0'
-    this.input = 0
+    this.inputNum = '0'
+    this.input = '0'
+    this.prepareCal = ''
   }
 
-  addInputs(): void {
-    if (this.inputDisplay === '0') {
-      this.inputDisplay = ''
+  displayNums(): void {
+    if (this.inputNum === '0') {
+      this.inputNum = ''
     }
-    if (this.inputDisplay.length < 11) {
-      this.inputDisplay += this.input
+
+    if(this.prepareCal.length == 0){
+      this.input=''
     }
-    this.input = 0
+
+    if (this.inputNum.length < 11) {
+
+      this.prepareCal += this.input
+      this.isOperator()
+
+      if (this.input == '+' || this.input == '-' || this.input == '*' || this.input == '/') {
+        return
+      }
+
+      
+
+      this.inputNum += this.input
+    }
+
+    this.input = '0'
+  }
+
+  isOperator(): void {
+    var i = this.prepareCal.length - 2
+    console.log(this.prepareCal[i])
+    if (this.prepareCal[i] == '+' || this.prepareCal[i] == '-' || this.prepareCal[i] == '*' || this.prepareCal[i] == '/') {
+      this.inputNum = ''
+      
+    }
   }
 
   getResult(): void {
-    this.result = eval(this.inputDisplay)
-    console.log(this.result)
-    this.inputDisplay = String(this.result)
+    this.result = eval(this.prepareCal)
+    this.inputNum = String(this.result)
+    this.prepareCal = ''
   }
 
   clearInputs(): void {
-    this.inputDisplay = '0'
+    this.inputNum = '0'
   }
 
 
