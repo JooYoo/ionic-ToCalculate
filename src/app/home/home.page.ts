@@ -13,6 +13,7 @@ export class HomePage {
   operator: string
   prepareCal: string
   result: number
+  isResult: boolean
 
 
   constructor() { }
@@ -29,33 +30,30 @@ export class HomePage {
       this.inputNum = ''
     }
 
-    if(this.prepareCal.length == 0){
-      this.input=''
+    if(this.isResult){
+      this.inputNum = ''
+      this.isResult = false
     }
 
+   
     if (this.inputNum.length < 11) {
 
       this.prepareCal += this.input
-      this.isOperator()
+      this.operatorProcessor()
 
       if (this.input == '+' || this.input == '-' || this.input == '*' || this.input == '/') {
         return
       }
-
-      
-
       this.inputNum += this.input
     }
 
     this.input = '0'
   }
 
-  isOperator(): void {
+  operatorProcessor(): void {
     var i = this.prepareCal.length - 2
-    console.log(this.prepareCal[i])
     if (this.prepareCal[i] == '+' || this.prepareCal[i] == '-' || this.prepareCal[i] == '*' || this.prepareCal[i] == '/') {
       this.inputNum = ''
-      
     }
   }
 
@@ -63,6 +61,7 @@ export class HomePage {
     this.result = eval(this.prepareCal)
     this.inputNum = String(this.result)
     this.prepareCal = ''
+    this.isResult = true
   }
 
   clearInputs(): void {
