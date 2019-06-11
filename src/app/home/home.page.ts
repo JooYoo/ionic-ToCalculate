@@ -14,6 +14,8 @@ export class HomePage {
   prepareCal: string
   result: number
   isResult: boolean
+  newEquationExpression: string
+  newEquationId: number
 
 
   constructor() { }
@@ -23,6 +25,7 @@ export class HomePage {
     this.inputNum = '0'
     this.input = '0'
     this.prepareCal = ''
+    this.newEquationId = 0
   }
 
   displayNums(): void {
@@ -30,14 +33,13 @@ export class HomePage {
       this.inputNum = ''
     }
 
-    if(this.isResult){
+    if (this.isResult) {
       this.inputNum = ''
       this.isResult = false
     }
 
-   
-    if (this.inputNum.length < 11) {
 
+    if (this.inputNum.length < 11) {
       this.prepareCal += this.input
       this.operatorProcessor()
 
@@ -60,12 +62,27 @@ export class HomePage {
   getResult(): void {
     this.result = eval(this.prepareCal)
     this.inputNum = String(this.result)
+
+    // preapre Equation
+    this.newEquationExpression = this.prepareCal + '=' + this.result + '\xa0\xa0'
+    this.addEquation()
+
     this.prepareCal = ''
     this.isResult = true
   }
 
   clearInputs(): void {
     this.inputNum = '0'
+  }
+
+  addEquation(): void{
+    this.equations.push({
+      id: this.newEquationId,
+      expression: this.newEquationExpression
+    })
+
+    this.newEquationId++;
+    this.newEquationExpression =''
   }
 
 

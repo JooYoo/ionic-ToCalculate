@@ -11,26 +11,20 @@
 
 <ion-content>
   <ion-list class="list-display">
-    <ion-item lines="none">
-      <ion-label class="row-display">
-        444+545
-      </ion-label>
-    </ion-item>
-
-    <ion-item lines="none">
-      <ion-label class="row-display">
-        12345555
-      </ion-label>
-    </ion-item>
-
+    <ion-label class="row-display" *ngFor="let equation of equations">
+      {{equation.expression}}
+    </ion-label>
   </ion-list>
 
-  <div>
-    <div id="container-input">
-      {{inputNum}}
-    </div>
-  </div>
+  
+</ion-content>
 
+<ion-content>
+ 
+  <div class="container-input">
+    <div id="equation-review">{{prepareCal}}</div>
+    {{inputNum}}
+  </div>
 </ion-content>
 
 <ion-footer>
@@ -49,10 +43,12 @@
             <ion-button (click)="input = '%'" (click)="addInputs()" Color="dark" expand="full">%</ion-button>
           </ion-col> -->
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="input = '/'" (click)="displayNums()" class="btn-fn" Color="dark" expand="full">&#247;</ion-button>
+            <ion-button (click)="input = '/'" (click)="displayNums()" class="btn-fn" Color="dark" expand="full">&#247;
+            </ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="input = '*'" (click)="displayNums()" class="btn-fn" Color="dark" expand="full">&#xd7;</ion-button>
+            <ion-button (click)="input = '*'" (click)="displayNums()" class="btn-fn" Color="dark" expand="full">&#xd7;
+            </ion-button>
           </ion-col>
         </ion-row>
 
@@ -67,9 +63,10 @@
             <ion-button (click)="input = '9'" (click)="displayNums()" Color="medium" expand="full">9</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="input = '-'" (click)="displayNums()" class="btn-fn" Color="dark" expand="full">&#x2212;</ion-button>
+            <ion-button (click)="input = '-'" (click)="displayNums()" class="btn-fn" Color="dark" expand="full">&#x2212;
+            </ion-button>
           </ion-col>
-         
+
         </ion-row>
 
         <ion-row class="btns-row">
@@ -83,9 +80,10 @@
             <ion-button (click)="input = '6'" (click)="displayNums()" Color="medium" expand="full">6</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="input = '&#x2b;'" (click)="displayNums()" class="btn-fn" expand="full" Color="dark">&#x2b;</ion-button>
+            <ion-button (click)="input = '&#x2b;'" (click)="displayNums()" class="btn-fn" expand="full" Color="dark">
+              &#x2b;</ion-button>
           </ion-col>
-          
+
         </ion-row>
 
         <ion-row class="btns-row">
@@ -99,7 +97,8 @@
             <ion-button (click)="input = '3'" (click)="displayNums()" Color="medium" expand="full">3</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button style="height:191%; bottom:0; top: 0;" (click)="input = '='" (click)="getResult()" class="btn-fn" Color="gold" expand="full">&#x3d;</ion-button>
+            <ion-button style="height:191%; bottom:0; top: 0;" (click)="input = '='" (click)="getResult()"
+              class="btn-fn" Color="gold" expand="full">&#x3d;</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="6">
             <ion-button (click)="input = '0'" (click)="displayNums()" Color="medium" expand="full">0</ion-button>
