@@ -71,18 +71,49 @@ export class HomePage {
     this.isResult = true
   }
 
-  clearInputs(): void {
-    this.inputNum = '0'
+  backSpace(): void {
+    // inputNum will remove one digit from end
+    if (this.prepareCal.length == 1) {
+      this.inputNum = '0'
+      this.prepareCal = ''
+    } else if( this.inputNum.length == 1 && this.prepareCal.length > 1){
+      this.inputNum = '0'
+      this.prepareCal = this.prepareCal.slice(0, this.prepareCal.length - 1)
+    } 
+    else {
+      this.skipOperator()
+    }
   }
 
-  addEquation(): void{
+  skipOperator(): void {
+
+    if (this.prepareCal[this.prepareCal.length - 1] == '+' ||
+      this.prepareCal[this.prepareCal.length - 1] == '-' ||
+      this.prepareCal[this.prepareCal.length - 1] == '*' ||
+      this.prepareCal[this.prepareCal.length - 1] == '/') {
+
+      this.prepareCal = this.prepareCal.slice(0, this.prepareCal.length - 1)
+   
+    }else{
+      this.inputNum = this.inputNum.slice(0, this.inputNum.length - 1)
+      this.prepareCal = this.prepareCal.slice(0, this.prepareCal.length - 1)
+    }
+  }
+
+  clearAll(): void {
+    this.prepareCal = ''
+    this.inputNum = '0'
+    this.equations = []
+  }
+
+  addEquation(): void {
     this.equations.push({
       id: this.newEquationId,
       expression: this.newEquationExpression
     })
 
     this.newEquationId++;
-    this.newEquationExpression =''
+    this.newEquationExpression = ''
   }
 
 

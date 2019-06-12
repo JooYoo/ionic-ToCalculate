@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <!-- <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+    </ion-buttons> -->
     <ion-title>
       Standard
     </ion-title>
@@ -34,10 +34,10 @@
 
         <ion-row class="btns-row">
           <ion-col class="grid-col-gap" size="3">
-            <ion-button (click)="clearInputs()" Color="dark" expand="full">AC</ion-button>
+            <ion-button (click)="clearAll()" Color="dark" expand="full">AC</ion-button>
           </ion-col>
           <ion-col class="grid-col-gap" size="3">
-            <ion-button Color="dark" expand="full">+/-</ion-button>
+            <ion-button (click)="backSpace()" Color="dark" expand="full">&#x232b;</ion-button>
           </ion-col>
           <!-- <ion-col class="grid-col-gap" size="3">
             <ion-button (click)="input = '%'" (click)="addInputs()" Color="dark" expand="full">%</ion-button>
@@ -117,7 +117,6 @@
           <ion-col class="grid-col-gap" size="3">
             <ion-button (click)="input = '.'" (click)="addInputs()" Color="dark" expand="full">&#8226;</ion-button>
           </ion-col>
-        
         </ion-row> -->
 
       </div>
