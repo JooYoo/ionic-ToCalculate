@@ -1,5 +1,7 @@
 {
   "name": "ToCalculate",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
