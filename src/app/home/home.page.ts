@@ -73,13 +73,13 @@ export class HomePage {
 
   backSpace(): void {
     // inputNum will remove one digit from end
-    if (this.prepareCal.length == 1) {
+    if (this.prepareCal.length == 1 || this.inputNum.length == 1) {
       this.inputNum = '0'
       this.prepareCal = ''
-    } else if( this.inputNum.length == 1 && this.prepareCal.length > 1){
+    } else if (this.inputNum.length == 1 && this.prepareCal.length > 1) {
       this.inputNum = '0'
       this.prepareCal = this.prepareCal.slice(0, this.prepareCal.length - 1)
-    } 
+    }
     else {
       this.skipOperator()
     }
@@ -93,8 +93,8 @@ export class HomePage {
       this.prepareCal[this.prepareCal.length - 1] == '/') {
 
       this.prepareCal = this.prepareCal.slice(0, this.prepareCal.length - 1)
-   
-    }else{
+
+    } else {
       this.inputNum = this.inputNum.slice(0, this.inputNum.length - 1)
       this.prepareCal = this.prepareCal.slice(0, this.prepareCal.length - 1)
     }
