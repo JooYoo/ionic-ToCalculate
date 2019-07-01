@@ -131,7 +131,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage.prototype.backSpace = function () {
         // inputNum will remove one digit from end
-        if (this.prepareCal.length == 1) {
+        if (this.prepareCal.length == 1 || this.inputNum.length == 1) {
             this.inputNum = '0';
             this.prepareCal = '';
         }

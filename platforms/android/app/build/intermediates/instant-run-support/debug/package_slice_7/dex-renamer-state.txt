@@ -1,4 +1,0 @@
-#Sat Jun 29 18:23:31 CEST 2019
-base.0=/Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/build/intermediates/transforms/dexMerger/debug/7
-path.0=classes.dex
-renamed.0=classes.dex
