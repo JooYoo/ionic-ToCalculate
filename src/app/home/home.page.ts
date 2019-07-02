@@ -61,6 +61,11 @@ export class HomePage {
 
   getResult(): void {
     this.result = eval(this.prepareCal)
+
+    if(!this.result){
+      return
+    }
+
     this.inputNum = String(this.result)
 
     // preapre Equation

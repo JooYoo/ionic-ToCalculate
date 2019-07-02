@@ -4,7 +4,7 @@ ADDED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/
 INJECTED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
 INJECTED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
 INJECTED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
-MERGED from [:CordovaLib] /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/CordovaLib/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:20:1-27:12
+MERGED from [:CordovaLib] /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:1-27:12
 INJECTED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
 INJECTED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
 INJECTED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
@@ -68,7 +68,7 @@ ADDED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/
 		ADDED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:6:194-256
 	android:name
 		ADDED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:6:166-193
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:7:13-10:29
 	android:label
 		ADDED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:7:28-65
@@ -83,8 +83,8 @@ ADDED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/
 uses-sdk
 ADDED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:13:5-74
 INJECTED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:13:5-74
-MERGED from [:CordovaLib] /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/CordovaLib/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:25:5-44
-MERGED from [:CordovaLib] /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/CordovaLib/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:25:5-44
+MERGED from [:CordovaLib] /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
+MERGED from [:CordovaLib] /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
 INJECTED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:13:5-74
 	android:targetSdkVersion
 		ADDED from /Users/jooyoo/Dev/to-calculate/ToCalculate/platforms/android/app/src/main/AndroidManifest.xml:13:42-71
