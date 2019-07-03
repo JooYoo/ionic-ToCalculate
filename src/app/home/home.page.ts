@@ -29,9 +29,10 @@ export class HomePage {
   }
 
   displayNums(): void {
-    if (this.inputNum === '0') {
-      this.inputNum = ''
-    }
+
+    // if (this.inputNum === '0') {
+    //   this.inputNum = ''
+    // }
 
     if (this.isResult) {
       this.inputNum = ''
@@ -46,10 +47,20 @@ export class HomePage {
       if (this.input == '+' || this.input == '-' || this.input == '*' || this.input == '/') {
         return
       }
-      this.inputNum += this.input
+
+      if (this.input === '.') {
+        this.inputNum = '0.'
+      } else if (this.inputNum[0] === '0' && this.input === '0') {
+        this.inputNum = '0'
+      } else {
+        this.inputNum += this.input
+      }
+
+
     }
 
     this.input = '0'
+    console.log('inputNum:' + this.inputNum)
   }
 
   operatorProcessor(): void {
@@ -60,9 +71,14 @@ export class HomePage {
   }
 
   getResult(): void {
-    this.result = eval(this.prepareCal)
 
-    if(!this.result){
+    var test = this.prepareCal
+
+    if(eval(this.prepareCal)){
+      this.result = eval(this.prepareCal)
+    }
+
+    if (!this.result) {
       return
     }
 
