@@ -51,6 +51,7 @@ export class HomePage {
 
       if (this.input === '.') {
         this.inputNum = '0.'
+        this.prepareCal ='0.'
       } else if (this.inputNum[0] === '0' && this.input === '0') {
         this.inputNum = '0'
       } else {
