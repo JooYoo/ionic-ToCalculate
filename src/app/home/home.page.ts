@@ -30,9 +30,10 @@ export class HomePage {
 
   displayNums(): void {
 
-    // if (this.inputNum === '0') {
-    //   this.inputNum = ''
-    // }
+    
+    if (this.inputNum === '0') {
+      this.inputNum = ''
+    }
 
     if (this.isResult) {
       this.inputNum = ''
@@ -60,7 +61,6 @@ export class HomePage {
     }
 
     this.input = '0'
-    console.log('inputNum:' + this.inputNum)
   }
 
   operatorProcessor(): void {
@@ -72,8 +72,6 @@ export class HomePage {
 
   getResult(): void {
 
-    var test = this.prepareCal
-
     if(eval(this.prepareCal)){
       this.result = eval(this.prepareCal)
     }
@@ -82,7 +80,13 @@ export class HomePage {
       return
     }
 
-    this.inputNum = String(this.result)
+    var resultLength = String(this.result).length
+    if(resultLength > 11){
+      this.inputNum = String(this.result).slice(0, 12-resultLength)
+    }else{
+      this.inputNum = String(this.result)
+    }
+
 
     // preapre Equation
     this.newEquationExpression = this.prepareCal + '=' + this.result + '\xa0\xa0'
