@@ -14,6 +14,7 @@ export class HomePage {
   prepareCal: string
   result: number
   isResult: boolean
+  isStart: boolean
   newEquationExpression: string
   newEquationId: number
 
@@ -26,13 +27,17 @@ export class HomePage {
     this.input = '0'
     this.prepareCal = ''
     this.newEquationId = 0
+    this.isStart = true
   }
 
   displayNums(): void {
 
-    
-    if (this.inputNum === '0') {
+    if (this.isStart) {
       this.inputNum = ''
+      this.isStart = false
+    }
+    else if (this.inputNum === '0') {
+      this.inputNum = '0'
     }
 
     if (this.isResult) {
@@ -49,9 +54,9 @@ export class HomePage {
         return
       }
 
-      if (this.input === '.') {
+      if (this.input === '.' && this.inputNum[0] == '.') {
         this.inputNum = '0.'
-        this.prepareCal ='0.'
+        this.prepareCal = '0.'
       } else if (this.inputNum[0] === '0' && this.input === '0') {
         this.inputNum = '0'
       } else {
@@ -73,7 +78,7 @@ export class HomePage {
 
   getResult(): void {
 
-    if(eval(this.prepareCal)){
+    if (eval(this.prepareCal)) {
       this.result = eval(this.prepareCal)
     }
 
@@ -82,9 +87,9 @@ export class HomePage {
     }
 
     var resultLength = String(this.result).length
-    if(resultLength > 11){
-      this.inputNum = String(this.result).slice(0, 12-resultLength)
-    }else{
+    if (resultLength > 11) {
+      this.inputNum = String(this.result).slice(0, 8 - resultLength)
+    } else {
       this.inputNum = String(this.result)
     }
 
@@ -130,6 +135,7 @@ export class HomePage {
     this.prepareCal = ''
     this.inputNum = '0'
     this.equations = []
+    this.isStart = true
   }
 
   addEquation(): void {

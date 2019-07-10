@@ -95,10 +95,15 @@ var HomePage = /** @class */ (function () {
         this.input = '0';
         this.prepareCal = '';
         this.newEquationId = 0;
+        this.isStart = true;
     };
     HomePage.prototype.displayNums = function () {
-        if (this.inputNum === '0') {
+        if (this.isStart) {
             this.inputNum = '';
+            this.isStart = false;
+        }
+        else if (this.inputNum === '0') {
+            this.inputNum = '0';
         }
         if (this.isResult) {
             this.inputNum = '';
@@ -110,7 +115,7 @@ var HomePage = /** @class */ (function () {
             if (this.input == '+' || this.input == '-' || this.input == '*' || this.input == '/') {
                 return;
             }
-            if (this.input === '.') {
+            if (this.input === '.' && this.inputNum[0] == '.') {
                 this.inputNum = '0.';
                 this.prepareCal = '0.';
             }
@@ -138,7 +143,7 @@ var HomePage = /** @class */ (function () {
         }
         var resultLength = String(this.result).length;
         if (resultLength > 11) {
-            this.inputNum = String(this.result).slice(0, 12 - resultLength);
+            this.inputNum = String(this.result).slice(0, 8 - resultLength);
         }
         else {
             this.inputNum = String(this.result);
@@ -179,6 +184,7 @@ var HomePage = /** @class */ (function () {
         this.prepareCal = '';
         this.inputNum = '0';
         this.equations = [];
+        this.isStart = true;
     };
     HomePage.prototype.addEquation = function () {
         this.equations.push({
