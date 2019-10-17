@@ -94,7 +94,7 @@ export class HomePage {
     }
 
 
-    // preapre Equation
+    // prepare Equation
     this.newEquationExpression = this.prepareCal + '=' + this.result + '\xa0\xa0'
     this.addEquation()
 
