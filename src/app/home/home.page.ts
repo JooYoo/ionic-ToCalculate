@@ -41,7 +41,13 @@ export class HomePage {
     }
 
     if (this.isResult) {
-      this.inputNum = ''
+
+      if (this.input == '+' || this.input == '-' || this.input == '*' || this.input == '/') {
+        
+      } else {
+        this.prepareCal = ''
+        this.inputNum = ''
+      }
       this.isResult = false
     }
 
@@ -98,7 +104,7 @@ export class HomePage {
     this.newEquationExpression = this.prepareCal + '=' + this.result + '\xa0\xa0'
     this.addEquation()
 
-    this.prepareCal = ''
+    // this.prepareCal = ''
     this.isResult = true
   }
 
