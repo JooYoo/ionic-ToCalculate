@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Equation } from '../interfaces/equation';
+import { EquationService } from '../services/equation.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,6 @@ import { Equation } from '../interfaces/equation';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  equations: Equation[]
   inputNum: string
   input: string
   operator: string
@@ -15,19 +15,20 @@ export class HomePage {
   result: number
   isResult: boolean
   isStart: boolean
-  newEquationExpression: string
-  newEquationId: number
+
+  equations: Equation[] 
 
 
-  constructor() { }
-
+  constructor(private equationService: EquationService) { 
+  }
+  
   ngOnInit() {
-    this.equations = []
     this.inputNum = '0'
     this.input = '0'
     this.prepareCal = ''
-    this.newEquationId = 0
     this.isStart = true
+    
+    this.equations = this.equationService.equations
   }
 
   displayNums(): void {
@@ -43,7 +44,7 @@ export class HomePage {
     if (this.isResult) {
 
       if (this.input == '+' || this.input == '-' || this.input == '*' || this.input == '/') {
-        
+
       } else {
         this.prepareCal = ''
         this.inputNum = ''
@@ -100,8 +101,8 @@ export class HomePage {
     }
 
 
-    // prepare Equation
-    this.newEquationExpression = this.prepareCal + '=' + this.result + '\xa0\xa0'
+    // add new Equation
+    this.equationService.newEquationExpression = this.prepareCal + '=' + this.result + '\xa0\xa0'
     this.addEquation()
 
     // this.prepareCal = ''
@@ -140,18 +141,13 @@ export class HomePage {
   clearAll(): void {
     this.prepareCal = ''
     this.inputNum = '0'
-    this.equations = []
     this.isStart = true
+
+    this.equationService.equations = []
   }
 
   addEquation(): void {
-    this.equations.push({
-      id: this.newEquationId,
-      expression: this.newEquationExpression
-    })
-
-    this.newEquationId++;
-    this.newEquationExpression = ''
+    this.equationService.addEquation()
   }
 
 
